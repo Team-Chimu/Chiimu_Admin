@@ -1,38 +1,70 @@
 .App {
-  text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+input {
+    margin: 1em;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.icon {
+    margin: 2em;
+    transform: scale(6);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+button {
+    margin: 1em;
 }
 
-.App-link {
-  color: #61dafb;
+.password {
+    margin-top: 5em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(109, 31, 0);
+    border-radius: 2em;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.week {
+    margin-top: 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(152, 97, 255);
+    border-radius: 2em;
+}
+
+.boom {
+    margin-top: 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: cyan;
+    border-radius: 2em;
+}
+
+.export {
+    margin-top: 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(164, 144, 11);
+    border-radius: 2em;
+}
+
+.questions {
+    margin-top: 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(254, 59, 212);
+    border-radius: 2em;
+    width: 80%;
+    height: 40em;
+}
+
+.questions textarea {
+    height: 80%;
+    width: 80%;
 }
