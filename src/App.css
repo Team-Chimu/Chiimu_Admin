@@ -68,3 +68,12 @@ button {
     height: 80%;
     width: 80%;
 }
+
+.testaccount {
+    margin-top: 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(164, 144, 11);
+    border-radius: 2em;
+}

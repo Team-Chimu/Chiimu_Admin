@@ -96,7 +96,7 @@ function App() {
   function displayExport() {
     return(
       <div className='export'>
-        <h1>Export Information</h1>
+        <h1>Export Data</h1>
         <FileDownloadIcon className='icon'/>
         <button onClick={exportData}>Export</button>
       </div>
@@ -114,14 +114,21 @@ function App() {
       },
       body: JSON.stringify({ SUPER_SECRET_PASSWORD : password })
     }
-    fetch(`${domain}/exportdata`, requestOptions)
+    fetch(`${domain}/admin/exportdata`, requestOptions)
     .then(res => res.json())
     .then(data => {
-        console.log(data)
+        const element = document.createElement("a")
+        const file = new Blob([JSON.stringify(data.message)], {type: 'text/json'});
+        element.href = URL.createObjectURL(file);
+
+        let date = new Date()
+        let fileName = "ChimuDataExport" + date.getFullYear() + ("0" + (date.getMonth() + 1)).slice(-2) + ("0" + date.getDate()).slice(-2) + ("0" + date.getHours() ).slice(-2) + ("0" + date.getMinutes()).slice(-2) + ("0" + date.getSeconds()).slice(-2) ;
+
+        element.download = `${fileName}.json`;
+        document.body.appendChild(element);
+        element.click();
     })
   }
-
-  
 
 
   const [questions, setQuestions] = useState("")
@@ -184,6 +191,37 @@ function App() {
   }
 
 
+
+  function displayTestAccounts() {
+    return (
+      <div className='testaccount'>
+        <h1>Create Test Accounts</h1>
+        <h2>for dev purposes</h2>
+        <button onClick={createTestAccounts}>create test accounts</button>
+      </div>
+    )
+    
+  }
+
+  function createTestAccounts() {
+    const requestOptions = {
+      credentials: 'include',
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ SUPER_SECRET_PASSWORD : password })
+    }
+    fetch(`${domain}/admin/testaccounts`, requestOptions)
+        .then(res => res.json())
+        .then(data => {
+            if (data.status === 'success') {
+              console.log('good')
+            } 
+        })
+  }
+
   useEffect(() => {
     getQuestions();
     getWeek();
@@ -197,6 +235,7 @@ function App() {
       {displayBoom()}
       {displayExport()}
       {displayQuestionControlPanel()}
+      {displayTestAccounts()}
     </div>
   );
 }
