@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/static/css/main.1721423e.css",
-    "main.js": "/static/js/main.ccb5e3c3.js",
-    "index.html": "/index.html",
-    "main.1721423e.css.map": "/static/css/main.1721423e.css.map",
-    "main.ccb5e3c3.js.map": "/static/js/main.ccb5e3c3.js.map"
+    "main.css": "/Chiimu_Admin/static/css/main.1721423e.css",
+    "main.js": "/Chiimu_Admin/static/js/main.ccb5e3c3.js",
+    "index.html": "/Chiimu_Admin/index.html",
+    "main.1721423e.css.map": "/Chiimu_Admin/static/css/main.1721423e.css.map",
+    "main.ccb5e3c3.js.map": "/Chiimu_Admin/static/js/main.ccb5e3c3.js.map"
   },
   "entrypoints": [
     "static/css/main.1721423e.css",
